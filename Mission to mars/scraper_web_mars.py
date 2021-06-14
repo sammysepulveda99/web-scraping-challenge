@@ -239,7 +239,7 @@ print(hemisphere)
 
 
 #Directionary retry
-mars_data={
+mars={
     'news_title': news_title,
     'news_p': news_p,
     'featured_image_url': featured_image_url,
@@ -253,7 +253,7 @@ mars_data={
 
 
 #Checking to make sure everything works
-mars_data
+mars
 
 
 # In[166]:
