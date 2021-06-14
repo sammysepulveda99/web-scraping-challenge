@@ -9,14 +9,14 @@ import scraper_web_mars
 
 #Setting our app with Flask
 app = Flask(__name__)
-mongo = PyMongo(app,uri ='mongodb://localhost:27017/mars')
+#Connecting to mongo
+mongo = PyMongo(app,uri ="mongodb://localhost:27017/mars")
 
 
 @app.route("/")
-
 def  index():
-    data = mongo.db.collection.find.one()
-    return render_template('index.html', mars=data)
+    mars = mongo.db.collection.find_one()
+    return render_template("index.html", mars=mars)
 
 @app.route("/scrape")
 
@@ -25,5 +25,5 @@ def mars_scrape():
     mongo.db.collection.update({},data_mars, upsert = True)
     return redirect("/")
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
