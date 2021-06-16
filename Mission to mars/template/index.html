@@ -95,7 +95,7 @@
              </div>
              <div class="col-md-3">
              <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere_images.0.Image_Url }}" class="card-img-top" alt="{{ mars.hemisphere_images.0.Title }}">
+              <img src="{{ mars.hemisphere.0.Image_Url| default(template/error.png) }}" class="card-img-top" >
               <div class="card-body">
                 <h5 class="card-title">{{ mars.hemisphere_images.0.title }}</h5>
               </div>
@@ -103,7 +103,7 @@
           </div>
             <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere_images.1.Image_Url }}" class="card-img-top" alt="{{ mars.hemisphere_images.1.Title }}">
+              <img src="{{ mars.hemisphere.1.Image_Url | default(template/error.png) }}"class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">{{ mars.hemisphere_images.1.Title }}</h5>
               </div>
@@ -111,7 +111,7 @@
           </div>
             <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere_images.2.Image_Url }}" class="card-img-top" alt="{{ mars.hemisphere_images.2.Title }}">
+              <img src="{{ mars.hemisphere.2.Image_Url | default(template/error.png) }}" class="card-img-top" >
               <div class="card-body">
                 <h5 class="card-title">{{ mars.hemisphere_images.2.Title }}</h5>
               </div>
@@ -119,7 +119,7 @@
           </div>
             <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere_images.3.Image_Url }}" class="card-img-top" alt="{{ mars.hemisphere_images.3.Title }}">
+              <img src="{{ mars.hemisphere.3.Image_Url | default(template/error.png) }}" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">{{ mars.hemisphere_images.3.Title }}</h5>
               </div>
