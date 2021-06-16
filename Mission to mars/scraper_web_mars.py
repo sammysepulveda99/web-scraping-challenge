@@ -139,7 +139,7 @@ def scrape():
 
     #Export to html code
     #Note to future self, use the DATAFRAME not the previous table since it is already in html
-    #mf_2.to_html('table.html')
+    mf_2.to_html('table.html')
 
 
 
@@ -178,15 +178,15 @@ def scrape():
     for x in items: 
         #Finding our hemisphere title
         title_item = x.find('h3').text
-        find_href =  x.find('a', class_='itemLink product-item')['href']
-        linksies = 'https://marshemispheres.com/'
+        find_href =  x.find('a')['href']
+        linksies = 'https://marshemispheres.com/' 
         image_url = linksies + find_href
         #Making sure our browser visits the image url we just created with the find function and the variable containing the link
         browser.visit(image_url)
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
-        image = soup.find('img', class_='wide-image')['src']
-        final_image = image_url + image
+        image = soup.find('div', class_='downloads').find('ul').find('li').find('a')['href']
+        final_image = linksies + image
         hemisphere.append({'Title':title_item, 'Image_Url':final_image})
         
     print(hemisphere)
@@ -201,13 +201,12 @@ def scrape():
         'news_p': news_p,
         'featured_image_url': featured_image_url,
         'mars_facts':html_table,
-        'hemisphere': hemisphere
+        'hemisphere_images': hemisphere
     }
     #Closing our browser
     browser.quit()
 
     return mars
-
 
 
 

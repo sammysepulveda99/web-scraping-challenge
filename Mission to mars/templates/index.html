@@ -13,7 +13,7 @@
 <body>
     <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
-        <p><a class="btn btn-primary btn-lg" href="/scraper_web_mars.py" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
 
 
@@ -95,33 +95,33 @@
              </div>
              <div class="col-md-3">
              <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere.0.Image_Url| default(template/error.png) }}" class="card-img-top" >
+              <img src="{{ mars.hemisphere_images[0].Image_Url}}" class="card-img-top" >
               <div class="card-body">
-                <h5 class="card-title">{{ mars.hemisphere_images.0.title }}</h5>
+                <h5 class="card-title">{{ mars.hemisphere_images[0].Title }}</h5>
               </div>
             </div>
           </div>
             <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere.1.Image_Url | default(template/error.png) }}"class="card-img-top">
+              <img src="{{ mars.hemisphere_images[1].Image_Url}}"class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">{{ mars.hemisphere_images.1.Title }}</h5>
+                <h5 class="card-title">{{ mars.hemisphere_images[1].Title }}</h5>
               </div>
             </div>
           </div>
             <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere.2.Image_Url | default(template/error.png) }}" class="card-img-top" >
+              <img src="{{ mars.hemisphere_images[2].Image_Url }}" class="card-img-top" >
               <div class="card-body">
-                <h5 class="card-title">{{ mars.hemisphere_images.2.Title }}</h5>
+                <h5 class="card-title">{{ mars.hemisphere_images[2].Title }}</h5>
               </div>
             </div>
           </div>
             <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src="{{ mars.hemisphere.3.Image_Url | default(template/error.png) }}" class="card-img-top">
+            <div class="card" style="width: 18rem;"> 
+              <img src="{{ mars.hemisphere_images[3].Image_Url}}" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">{{ mars.hemisphere_images.3.Title }}</h5>
+                <h5 class="card-title">{{ mars.hemisphere_images[3].Title }}</h5>
               </div>
               </div>
             </div>
