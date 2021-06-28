@@ -17,12 +17,6 @@ def scrape():
 
 
 
-
-    #Setting main dictionary
-    mars_dict = []
-    #Fail, was not able to insert it as it goes, so I will join everything in the end since it was sensitive to my variable types
-
-
     # **Mars News**
 
 
@@ -41,7 +35,7 @@ def scrape():
 
 
     #Getting the latest news title
-    news_title = soup.find("div", class_="content_title").text
+    news_title = soup.find("div", class_="content_title").get_text()
     print(news_title)
 
 
