@@ -45,13 +45,6 @@ def scrape():
     news_p = soup.find("div", class_ ="article_teaser_body").text
     print(news_p)
 
-
-
-
-    #browser.quit()
-    #Not done yet so I'm not running it
-
-
     # **JPL Mars Space Images (Featured Image)**
 
 
@@ -75,12 +68,8 @@ def scrape():
     f_image = image.find("img", class_="headerimage")["src"]
     featured_image_url = url + f_image
     print(featured_image_url)
-    #Aw, a beautiful dusty cloud
 
 
-
-    #browser.quit()
-    #Not done yet so I'm not running it
 
 
     # **Mars Facts**
@@ -111,7 +100,7 @@ def scrape():
 
 
 
-    #A fixed column name can't be written so it is better to get it from a function because it is not the same as the table goes
+    # fixed column name can't be written,  get it from a function because it changes
     #We get the first values as the name for the columns
     mars_facts_df.columns = mars_facts_df.iloc[0]
     mf_2 = mars_facts_df.iloc[1:]
@@ -134,11 +123,6 @@ def scrape():
     #Export to html code
     #Note to future self, use the DATAFRAME not the previous table since it is already in html
     mf_2.to_html('table.html')
-
-
-
-    #browser.quit()
-    #Not done yet so I'm not running it
 
 
     # **Mars Hemisphere**
@@ -184,8 +168,7 @@ def scrape():
         hemisphere.append({'Title':title_item, 'Image_Url':final_image})
         
     print(hemisphere)
-    #Wow this for almost killed my spirit
-    #Note to self, if you run it over and over it piles links ontop, so run it from the start each time
+    #if you run it over and over it piles links ontop, so run it from the start each time
 
 
 
